@@ -6,8 +6,7 @@ import {
 } from '../interfaces/fetchAllPokemonResponse';
 
 export const fetchAllPokemons = async (): Promise<Pokemon[]> => {
-  // 1500
-  const response = await pokemonApi.get<FetchAllPokemonResponse>('/pokemon?limit=10');
+  const response = await pokemonApi.get<FetchAllPokemonResponse>('/pokemon?limit=1500');
 
   const smallPokemonList = response.data.results;
 
@@ -26,7 +25,7 @@ const transformSmallPokemonIntoPokemonList = (
       id,
       pic,
       name: poke.name,
-      // name: poke.name[0].toUpperCase() + poke.name.slice(1),
+      //name: poke.name[0].toUpperCase() + poke.name.slice(1),
     };
   });
 

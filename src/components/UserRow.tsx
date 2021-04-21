@@ -1,11 +1,21 @@
 import React from 'react';
 
 export const UserRow = ({ pokemon }: any) => {
+  const { id, name, pic } = pokemon;
+
   return (
     <tr>
-      <td>{pokemon.id}</td>
-      <td>{pokemon.name}</td>
-      <td></td>
+      <td>{id}</td>
+      <td>{name}</td>
+      <td>
+        <img
+          src={pic}
+          alt={`Name pokemon ${name}`}
+          style={{
+            height: 75,
+          }}
+        />
+      </td>
     </tr>
   );
 };
